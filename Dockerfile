@@ -1,10 +1,16 @@
 FROM python:3-alpine
 
-RUN apk add --update jpeg-dev zlib-dev
+RUN apk add --no-cache build-base jpeg-dev zlib-dev
 
 # for a flask server
 EXPOSE 5000
 
-COPY requirements.txt /root/requirements.txt
-RUN pip install -r /root/requirements.txt
-CMD python server.py
+ENV HOME /app
+
+COPY requirements.txt $HOME/requirements.txt
+RUN pip install -r $HOME/requirements.txt
+
+COPY . $HOME
+WORKDIR $HOME
+
+CMD ["python", "server.py"]
