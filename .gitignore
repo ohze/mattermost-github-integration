@@ -1,10 +1,9 @@
 *.pyc
 *.swp
-config.py
 # distutils related files
 .cache
 *.egg-info
 build
 dist
-
-mattermostgithub/config.py
+/env
+/.idea
