@@ -1,6 +1,5 @@
 *.pyc
 *.swp
-config.py
 # distutils related files
 .cache
 *.egg-info
