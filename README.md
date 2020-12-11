@@ -112,3 +112,12 @@ All other events will report back to GitHub with `400 Not Implemented`.
 of `Town Square` it needs to be `town-square`.
 
 - If you set a custom username (as shown in the default config), make sure you also set **Enable webhooks and slash commands to override usernames** under **Custom Integrations** in the System Console to **True**. Otherwise the bots username will be that of the person that setup the Mattermost integration.
+
+##Build && Deploy to SanDinh
+
+```
+docker build --rm=true -t r.bennuoc.com/mm-github .
+docker login r.bennuoc.com
+(fill username/pass)
+docker push r.bennuoc.com/mm-github
+``` 
